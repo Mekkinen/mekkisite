@@ -1,0 +1,8 @@
+{
+  "description": "Just mekki's porfolio and testing site.",
+  "repository": "github:Mekkinen/mekkisite",
+  "license": "MIT",
+  "dependencies": {
+    "webgl-obj-loader": "^2.0.6"
+  }
+}
