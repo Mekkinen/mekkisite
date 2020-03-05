@@ -3,16 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-<script
-  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
-  crossorigin="anonymous">
-</script>
-<script src = "/path/to/clientside-require.js"></script>
-<script>
-    var promise_request = load("clientside-request") // loads the `clientside-request` npm package
-    var promise_utility = load("/mekkisite/webgl-render/app.js") // loads a custom js script without poluting global scope
-</script>
 <script id="shader-fs" type="x-shader/x-fragment">
     precision mediump float;
 
@@ -46,8 +36,8 @@
 </script>
 <!--
     <script type="text/javascript" src="gl-matrix.js"></script>
-    <script type="text/javascript" src="/mekkisite/webgl-render/app.js"></script>
 -->
+<script type="text/javascript" src="/mekkisite/webgl-render/app.js"></script>
 
 <title>mekkisite</title>
 </head>
