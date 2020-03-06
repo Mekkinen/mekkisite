@@ -1,0 +1,30 @@
+html, body {
+    background-color: #dae8e2;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Lato", sans-serif;
+}
+
+canvas {
+    background-color: antiquewhite;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+}
+
+.centered-block {
+    text-align: center;
+    background-color: #777799;
+    color: #ffffff;
+    padding: 6% 8%;
+}
+
+body, html {
+  height: 100%;
+  color: #777;
+  line-height: 1.8;
+  padding: 2% 5%;
+}
