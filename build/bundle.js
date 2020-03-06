@@ -27,19 +27,20 @@
   \****************************/
 /*! no static exports found */function(module,exports,__webpack_require__){eval('module.exports = __webpack_require__(/*! /home/aaron/google_drive/projects/webgl-obj-loader/src/index.ts */"./src/index.ts");\n\n\n//# sourceURL=webpack://OBJ/multi_./src/index.ts?')}})}));
 },{}],3:[function(require,module,exports){
-
 var fs = require('fs');
 var gl = document.getElementById('glCanvas').getContext('webgl');
 var OBJ = require('webgl-obj-loader');
+
+console.log(fs.readFile);
 
 var meshPath = '../models/crystal.obj';
 var opt = { encoding: 'utf8' };
 
 const readMeshes = () => {
-    fs.readFile(meshPath, opt, function (err, data) {
-        if (err) return console.error(err);
+    fs.readFile(meshPath, opt, (err, data) => {
+        if (err) return new Promise(console.error(err));
         mesh = new OBJ.Mesh(data);
-        return mesh;
+        return new Promise(mesh);
     });
 };
 
@@ -89,7 +90,7 @@ const webGLStart = (mesh) => {
 }
 
 window.onload = () => {
-    readMeshes.then( (mesh) => {
+    readMeshes().then( (mesh) => {
         webGLStart(mesh)
     });
 }
