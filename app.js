@@ -1,17 +1,33 @@
-var fs = require('fs');
+var fs = require('browserify-fs');
+var path = require('path');
 var gl = document.getElementById('glCanvas').getContext('webgl');
 var OBJ = require('webgl-obj-loader');
 
-console.log(fs.readFile);
+// var testFileSystem = require('../serve-static.js');
 
-var meshPath = '../models/crystal.obj';
+var localStaticPath = "http://127.0.0.1:8080"
+var meshPath = path.join(localStaticPath, "/models/crystal.obj");
+
+const testFileSystem = () => {
+    fs.readFile('/mnt/f/WebDev/mekkisite/mekkisite/models/crystal.obj', 'utf-8', (err, data) => {
+        console.log(data);
+    });
+};
+
+console.log("testing file system");
+testFileSystem();
+
+// console.log(__dirname);
+// var meshPath = path.join(__dirname, '..', 'models', 'crystal.obj');
+//console.log(meshPath);
 var opt = { encoding: 'utf8' };
 
 const readMeshes = () => {
-    fs.readFile(meshPath, opt, (err, data) => {
-        if (err) return new Promise(console.error(err));
-        mesh = new OBJ.Mesh(data);
-        return new Promise(mesh);
+    return new Promise ((resolve, reject) => {
+        fs.readFile("./crystal.obj", opt, (err, data) => {
+            if (err) return reject(err)
+            resolve(new OBJ.Mesh(data))
+        })
     });
 };
 
@@ -63,6 +79,6 @@ const webGLStart = (mesh) => {
 window.onload = () => {
     readMeshes().then( (mesh) => {
         webGLStart(mesh)
-    });
+    }).catch( (err) => console.log(err));
 }
 

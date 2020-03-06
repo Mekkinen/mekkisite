@@ -3,13 +3,24 @@
   "repository": "github:Mekkinen/mekkisite",
   "license": "AGPL-3.0",
   "dependencies": {
-    "brfs": "^2.0.2",
+    "@types/node-static": "^0.7.3",
     "browserify": "^16.5.0",
-    "fs": "0.0.1-security",
+    "browserify-fs": "^1.0.0",
+    "gl-matrix": "^3.2.1",
+    "http-server": "^0.12.1",
     "uniq": "^1.0.1",
+    "watchify": "^3.11.1",
     "webgl-obj-loader": "^2.0.6"
   },
   "scripts": {
-    "build": "./node_modules/browserify/bin/cmd.js ./webgl-render/app.js -o ./build/bundle.js"
+    "watch": "./node_modules/watchify/bin/cmd.js --debug -t browserify-shader index.js -o ./build/bundle.js",
+    "build": "./node_modules/browserify/bin/cmd.js ./app.js -o ./build/bundle.js",
+    "start": "./node_modules/browserify/bin/cmd.js ./app.js -o ./build/bundle.js & ./node_modules/http-server/bin/http-server /mnt/f/WebDev/mekkisite/mekkisite"
+  },
+  "devDependencies": {
+    "browserify-shader": "^0.1.2",
+    "eslint": "^6.8.0",
+    "http": "0.0.0",
+    "node-static": "^0.7.11"
   }
 }
