@@ -3,7 +3,9 @@
   "repository": "github:Mekkinen/mekkisite",
   "license": "AGPL-3.0",
   "dependencies": {
+    "brfs": "^2.0.2",
     "browserify": "^16.5.0",
+    "fs": "0.0.1-security",
     "uniq": "^1.0.1",
     "webgl-obj-loader": "^2.0.6"
   },
