@@ -1,0 +1,15 @@
+# Blender MTL File: 'wc24.blend'
+# Material Count: 1
+
+newmtl Material
+Ns 152.941176
+Ka 1.000000 1.000000 1.000000
+Kd 0.115433 0.523191 0.241582
+Ks 0.442346 0.442346 0.442346
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd LeavesTropical0017_S.jpg
+map_Bump -bm -1.600000 LeavesTropical0017_S.jpg
+map_Ks LeavesTropical0017_S.jpg
