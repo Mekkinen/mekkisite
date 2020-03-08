@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # mekkisite
 
 
@@ -20,6 +19,3 @@ Tangerine leaf
 - https://sketchfab.com/3d-models/tangerine-leaf-db759815d0df465e8f8d8c72b68879b2
 
 
-=======
-# mekkisite
->>>>>>> 7a7ab620a3b240b7cc14fba2ba1888c23567b178
